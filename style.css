@@ -547,6 +547,10 @@ a {
     }
 
     /* Header */
+    .header {
+        padding: 18px 0;
+    }
+
     .header__wrapper {
         justify-content: flex-start;
     }
