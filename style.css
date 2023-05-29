@@ -3,6 +3,7 @@
     src: url( /fonts/AvenirLTStd-Black.otf );
 }
 
+/* website colors */
 :root {
     --white: #fff;
     --black: #000;
@@ -12,8 +13,14 @@
     --accent: #01996D;
     --accent-light: #CCEBE3;
     --accent-dark: #245852;
+    /* Fonts Families */
+    --noto-sans: 'Noto Sans Georgian', serif;
+    --lato: 'Lato', sans-serif;
+    --avenir: 'Avenir', serif;
+
 }
 
+/* CSS reset */
 * {
     padding: 0;
     margin: 0;
@@ -22,6 +29,7 @@
     text-decoration: none;
 }
 
+/* Content container */
 .container {
     max-width: 100%;
     margin: 0 auto;
@@ -33,6 +41,7 @@
     overflow: hidden;
 }
 
+/* Menu overlay */
 .wrapper::before {
     content: '';
     inset: 0;
@@ -48,6 +57,7 @@
     visibility: visible;
 }
 
+/* Underline decor with animation */
 .underline {
     position: relative;
 }
@@ -70,6 +80,7 @@
     width: 100%;
 }
 
+/* General styles */
 a {
     color: inherit;
     display: inline-block;
@@ -79,19 +90,19 @@ a {
     font-weight: 700;
     font-size: clamp( 30px, 3vw, 50px );
     line-height: 1.56;
-    font-family: 'Noto Sans Georgian', serif;
+    font-family: var(--noto-sans);
     color: var(--accent);
 }
 
 .subtitle {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--lato);
     font-size: clamp( 18px, 2vw, 25px );;
     line-height: 1.25;
     color: var(--text-color-2);
 }
 
 .paragraph {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--lato);
     font-size: clamp( 14px, 2vw, 20px );
     line-height: 1.5;
     color: var(--text-color-2);
@@ -99,7 +110,7 @@ a {
 
 .btn {
     transition: background-color 0.3s ease-in-out;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--lato);
     font-size: clamp( 14px, 3vw ,20px );
     line-height: clamp( 20px, 3vw ,30px );
     border-radius: 4px;
@@ -118,7 +129,7 @@ a {
 /* HEADER */
 .header {
     padding: 14px 0;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--lato);
     font-size: clamp( 14px, 3vw ,20px );
     line-height: 20px;
     background-color: var(--white);
@@ -137,7 +148,7 @@ a {
     font-size: clamp(22px, 2vw, 26px);
     line-height: 1.375;
     color: var(--accent);
-    font-family: "Avenir", serif;
+    font-family: var(--avenir);
 }
 
 .header-navigation {
@@ -211,7 +222,6 @@ a {
 .hero-section__title {
     font-size: clamp(40px, 4vw, 65px);
     line-height: 1.14;
-
 }
 
 .hero-section__subtitle {
@@ -223,20 +233,8 @@ a {
     padding: 50px 0;
 }
 
-.how-it-works-section__wrapper {
-
-}
-
 .how-it-works-section__title {
     margin: 10px 0;
-}
-
-.how-it-works-section__subtitle {
-
-}
-
-.how-it-works-section__paragraph {
-
 }
 
 .how-it-works-section__cards {
@@ -260,7 +258,7 @@ a {
 .how-it-works-section-card__title {
     position: relative;
     margin: 3rem 0 2rem 2rem;
-    font-family: 'Noto Sans Georgian', serif;
+    font-family: var(--noto-sans);
     color: var(--black);
     font-size: clamp( 20px, 3vw, 30px );
     line-height: 45px;
@@ -273,7 +271,7 @@ a {
     position: absolute;
     bottom: 0;
     left: -30px;
-    font-family: 'Noto Sans Georgian', serif;
+    font-family: var(--noto-sans);
     font-size: clamp(100px, 2vw, 150px);
     line-height: 1;
     z-index: -1;
@@ -295,10 +293,6 @@ a {
 .success-story-section {
     padding: 80px 0;
     background-color: var(--accent-dark);
-}
-
-.success-story-section__wrapper {
-
 }
 
 .success-story-section__title {
@@ -323,10 +317,6 @@ a {
     display: block;
 }
 
-.success-story-section__image {
-
-}
-
 /* OUR PRODUCT SECTION */
 .our-product-section {
     padding: 50px 0;
@@ -335,10 +325,6 @@ a {
 .our-product-section__wrapper {
     display: grid;
     gap: 2rem;
-}
-
-.our-product-section__info {
-
 }
 
 .our-product-section__subtitle {
@@ -361,11 +347,74 @@ a {
     max-width: 100%;
 }
 
-.our-product__biography {
+/* Avatar profile */
+.our-product-biography {
     position: absolute;
-    max-width: 40%;
-    bottom: 0;
-    left: 0;
+    max-width: 300px;
+    width: 45%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--white);
+    padding: 10px;
+    bottom: -10%;
+    left: -5%;
+    font-family: var(--lato);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.our-product-biography__title {
+    font-size: clamp(10px, 3vw, 15px);
+    font-weight: 600;
+    line-height: 1.5;
+    position: relative;
+}
+
+.our-product-biography__title::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    height: 1px;
+    background-color: var(--black);
+    width: 120%;
+}
+
+.our-product-biography__name {
+    font-size: clamp(8px, 3vw, 12px);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.our-product-biography__avatar {
+    border-radius: 50%;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    aspect-ratio: 1 / 1;
+    width: clamp(30px, 3vw, 50px);
+}
+
+.our-product-biography__text {
+    font-family: var(--noto-sans);
+    font-weight: 700;
+    font-size: clamp(10px, 3vw, 16px);
+    line-height: 1.5;
+    margin: 1rem 0;
+
+}
+
+.our-product-biography__list {
+    font-size: clamp(8px, 3vw, 11px);
+    line-height: 2;
+}
+
+.our-product-biography__item {
+    list-style: disc;
 }
 
 /* FOOTER */
@@ -375,7 +424,7 @@ a {
 }
 
 .footer__logo {
-    font-family: "Avenir", serif ;
+    font-family: var(--avenir);
     margin-bottom: 30px;
     font-size: clamp(20px, 3vw, 40px);
     line-height: 1.375;
@@ -383,7 +432,7 @@ a {
 }
 
 .footer-navigation {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--lato);
     font-size: clamp(16px, 3vw, 25px);
     font-weight: 600;
     line-height: 1.25;
@@ -415,8 +464,7 @@ a {
     }
 
     /* Our product section */
-    .our-product__biography {
-        bottom: -10%;
+    .our-product-biography {
         left: -10%;
     }
 }
@@ -490,16 +538,13 @@ a {
     .success-story-section {
         padding: 5rem 0;
     }
+
     .success-story-section__wrapper {
         display: grid;
         column-gap: 2rem;
         justify-items: start;
         align-items: center;
         grid-template-columns: minmax(100px, 580px) minmax(200px, 896px);
-    }
-
-    .success-story-section__info-wrapper {
-
     }
 
     .success-story-section__image-wrapper {
@@ -510,6 +555,7 @@ a {
     .our-product-section__wrapper {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         grid-template-rows: minmax(0, 1fr);
+        gap: 6rem;
     }
 
     .our-product-section__info {
@@ -519,6 +565,10 @@ a {
     .our-product__image-wrapper {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
+    }
+
+    .our-product-section__paragraph {
+        margin-bottom: 2.5rem;
     }
 
     /* Footer */
@@ -624,4 +674,3 @@ a {
         padding: 6rem 0 9rem;
     }
 }
-
