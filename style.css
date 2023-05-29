@@ -194,6 +194,7 @@ a {
     font-size: inherit;
     line-height: inherit;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .header-actions__start-trial,
